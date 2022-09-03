@@ -28,6 +28,6 @@ Even if such a file is not used to load the polygons, the clockwise / counter-cl
 
 When the python script /polygons/display_map.py is used, it draws the map, which looks like this:
 
-![alt text](https://github.com/MachTe/Minimal_Construct_Algorithm/TestMapEmpty.png?raw=true)
+![alt text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapEmpty.PNG?raw=true)
 # Bibliography
 [1] Missura, Marcell & Lee, Daniel & Bennewitz, Maren. (2018). Minimal Construct: Efficient Shortest Path Finding for Mobile Robots in Polygonal Maps. 7918-7923. 10.1109/IROS.2018.8594124. 
