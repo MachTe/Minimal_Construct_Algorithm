@@ -379,78 +379,78 @@ std::vector<Point> FindDirectionOfTravel(std::vector<PolygonMCA> polygons, Verte
 	std::priority_queue<VertexInGraph*, std::vector<VertexInGraph*>, ComparePriority> q;	//We are using a priority queue q
 	std::priority_queue<VertexInGraph*, std::vector<VertexInGraph*>, ComparePriority>* qptr = &q;
 
-	Graph G;																				//Start with an empty graph
+	Graph G;
 	G.vertices.reserve(2000);
 
-	G.vertices.push_back(S);																//Add start and target vertices
+	G.vertices.push_back(S);
 	G.vertices.push_back(T);
 
 	VertexInGraph* Sptr = &(G.vertices[0]);
 	VertexInGraph* Tptr = &(G.vertices[1]);
-	(*Sptr).neighbors.push_back(Tptr);														//Add T to the neighbours of S
+	(*Sptr).neighbors.push_back(Tptr);
 	(*Tptr).neighbors.push_back(Sptr);
 	//
 	(*Sptr).heruistic = VertexDistance(Sptr, Tptr);
 	(*Tptr).heruistic = 0.0;
 
-	(*Tptr).parent = Sptr;																	//Set S as the parent of T
-	(*Sptr).closed = true;																	//Close the start vertex
+	(*Tptr).parent = Sptr;
+	(*Sptr).closed = true;
 	(*Sptr).cost = 0.0;
 
-	q.push(&(G.vertices[1]));																//Push the target into the q
+	q.push(&(G.vertices[1]));
 
-	while (!q.empty())																		//While q is not empty
+	while (!q.empty())
 	{ 
-		v = q.top();																		//pop the vertex with top priority 
+		v = q.top();
 		q.pop();
 
-		u = (*v).parent;																	//Get the parent of v
+		u = (*v).parent;
 		
 		if (u == NULL ||  v == NULL)
 		{
 			continue;
 		}
 		p = LineIntersectionTest(u, v, &polygons);
-		if (p == USHRT_MAX) {																//if no polygon has been intersected
-			if (v == &(G.vertices[1]))														//if the target has been reached
+		if (p == USHRT_MAX) {
+			if (v == &(G.vertices[1]))
 			{
 
-				ExtractPath(v, &Path, &G, qptr, polygons);									//Follow parents to start
-				break;																		//Finished!
+				ExtractPath(v, &Path, &G, qptr, polygons);
+				break;
 			}
 
-			(*v).closed = true;																//Close the vertex v
+			(*v).closed = true;
 
-			for (unsigned short i = 0; i < (*v).neighbors.size(); i++)                      //Expand neighbours
+			for (unsigned short i = 0; i < (*v).neighbors.size(); i++)
 			{
 				v_i = (*v).neighbors[i];													
-				if (!(*v_i).closed)															//If v_i is not closed yet
+				if (!(*v_i).closed)
 				{
-					if(!(*v_i).open || (*v).cost + VertexDistance(v, v_i) < (*v_i).cost)	//Complicated --> look up in documentation
+					if(!(*v_i).open || (*v).cost + VertexDistance(v, v_i) < (*v_i).cost)
 					{
-						(*v_i).parent = v;													//Set v as a parent of v_i
-						(*v_i).cost = (*v).cost + VertexDistance(v, v_i);					//Path cost so far
-						(*v_i).heruistic = VertexDistance(v_i, &(G.vertices[1]));						//Heuristic cost to target
-						(*v_i).priority = (*v_i).cost + (*v_i).heruistic;					//Priority
-						q.push(v_i);														//Push v_i into the q
+						(*v_i).parent = v;
+						(*v_i).cost = (*v).cost + VertexDistance(v, v_i);
+						(*v_i).heruistic = VertexDistance(v_i, &(G.vertices[1]));
+						(*v_i).priority = (*v_i).cost + (*v_i).heruistic;
+						q.push(v_i);
 						(*v_i).open = true;
 					}
 				}
 			}
 		}
-		else {																				//Polyhon p has been intersected
+		else {
 			
-			(*u).RemoveNeighbor(v);															//v is no longer neighbor of u
+			(*u).RemoveNeighbor(v);	
 			(*v).RemoveNeighbor(u);
 
-			(*v).parent = NULL;																//Remove parent of v
+			(*v).parent = NULL;
 			(*v).cost = DBL_MAX;
 			(*v).priority = DBL_MAX;
-			FindParent(v, qptr);															//Look up the function
-			if (!polygons[p].closed)														//if polygon p has not been closed
+			FindParent(v, qptr);
+			if (!polygons[p].closed)
 			{
-				ConnectObstacle(&(polygons[p]), &G, qptr, &polygons);						//Look up the function
-				polygons[p].closed = true;													//Close the intersected polygon
+				ConnectObstacle(&(polygons[p]), &G, qptr, &polygons);
+				polygons[p].closed = true;
 			}
 		}
 		(*v).open = false;
