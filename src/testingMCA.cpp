@@ -5,11 +5,12 @@ int main()
 	std::vector<PolygonMCA> polygons;
 	PolygonMCA CurrentPolygon;
 	PolygonMCA EmptyPolygon;
+	
+	//LOADING POLYGONS FROM TXT BEGIN
 	std::string tmp;
 	std::string tmp2;
 	std::string filename = "../polygons/TestPolygons.txt";
 
-	//LOAD CITIES
 	std::ifstream mapPolygons(filename);
 
 	while (getline(mapPolygons, tmp)) {
@@ -33,6 +34,7 @@ int main()
 	polygons.push_back(CurrentPolygon);
 
 	mapPolygons.close();
+	//LOADING POLYGONS FROM TXT END
 
 	VertexInGraph S, T;
 	
@@ -41,12 +43,7 @@ int main()
 	S.posx = 15.0;
 	S.posy = 80.0;
 	
-	auto start = std::chrono::high_resolution_clock::now();
 	std::vector<Point> l = FindDirectionOfTravel(polygons, S, T);
-	auto stop = std::chrono::high_resolution_clock::now();
-	auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
-
-	std::cout << "Time taken by function: " << duration.count() << " microseconds" << std::endl;
 
 	std::ofstream outFile;
 	outFile.open(filename, std::ios_base::app);
@@ -60,9 +57,6 @@ int main()
 	}
 
 	outFile.close();
-
-	//input just to force the command prompt to stay opened
-	int f;
-	std::cin >> f;
+	
 	return 0;
 }
