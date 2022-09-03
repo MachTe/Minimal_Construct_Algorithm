@@ -20,11 +20,15 @@ x1<br />
 y1<br />
 ...<br />
 
-MAIN are polygons which encircle the start and end points and the final path has to be cointained within them, it makes sense to have just one such polygon, but there can be more. These polygons have to be written  down clockwise.
+**MAIN** are polygons which encircle the start and end points. The final path has to be cointained within them, it makes sense to have just one such polygon, but there can be more. These polygons have to be written down in a clockwise manner.
 
-HOLE are polygons which act as obstacles and cannot be crossed, such polygons have to be written down counter-clockwise.
+**HOLE** are polygons which act as obstacles and cannot be crossed, such polygons have to be written down in a counter-clockwise manner.
 
-Even if such a file is not used to load the polygons, the clockwise / counter-clockwise condition still holds.
+Even if such a file is not used to load the polygons, the clockwise / counter-clockwise conditions still holds.
+
+When the python script /polygons/display_map.py is used, it draws the map, which looks like this:
+
+![alt text](TestMapEmpty.png "Title")
 
 # Bibliography
 [1] Missura, Marcell & Lee, Daniel & Bennewitz, Maren. (2018). Minimal Construct: Efficient Shortest Path Finding for Mobile Robots in Polygonal Maps. 7918-7923. 10.1109/IROS.2018.8594124. 
