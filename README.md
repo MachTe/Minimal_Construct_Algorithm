@@ -20,5 +20,11 @@ x1<br />
 y1<br />
 ...<br />
 
+MAIN are polygons which encircle the start and end points and the final path has to be cointained within them, it makes sense to have just one such polygon, but there can be more. These polygons have to be written  down clockwise.
+
+HOLE are polygons which act as obstacles and cannot be crossed, such polygons have to be written down counter-clockwise.
+
+Even if such a file is not used to load the polygons, the clockwise / counter-clockwise condition still holds.
+
 # Bibliography
 [1] Missura, Marcell & Lee, Daniel & Bennewitz, Maren. (2018). Minimal Construct: Efficient Shortest Path Finding for Mobile Robots in Polygonal Maps. 7918-7923. 10.1109/IROS.2018.8594124. 
