@@ -35,7 +35,7 @@ In order to execute **testingMCA.cpp** normaly, it has to be compiled and run fr
 
 Once the program has finished, the shortest path can be found appended at the end of the **TestPolygons.txt** file. If you run the python script on it, it is going to visualize the path:
 
-![text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapPtah.PNG?raw=true)
+![text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapPtah.PNG? =250x)
 
 
 # Bibliography
