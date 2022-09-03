@@ -3,7 +3,7 @@ This repository contains **C++** implementation of the Minimal Construct Algorit
 
 All that is needed is to include the MCA.h header file and correctly use the FindDirectionOfTravel function, which returns the shortest path as a vector of Points.
 
-The simplest implementation is contained in the testingMCA.cpp file. Sample polygon map is loaded from the /polygons/TestPolygons.txt, which follows a simple structure which goes like this:
+The simplest implementation is contained in the testingMCA.cpp file. Sample polygon map is loaded from the /polygons/**TestPolygons.txt**, which follows a simple structure which goes like this:
 
 MAIN<br />
 x1<br />
@@ -26,16 +26,16 @@ y1<br />
 
 Even if such a file is not used to load the polygons, the clockwise / counter-clockwise conditions still holds.
 
-When the python script /polygons/display_map.py is used, it draws a visualization which looks like this:
+When the python script /polygons/**display_map.py** is used, it draws a visualization which looks like this:
 
-![alt text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapEmpty.PNG?raw=true)
+![text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapEmpty.PNG?raw=true)
 
 # Compilation
-In order to execute testingMCA.cpp normaly, it has to be compiled and run from the same folder. Start point S and target point T are chosen withing the file itself.
+In order to execute **testingMCA.cpp** normaly, it has to be compiled and run from the same folder where **testingMCA.cpp** is situated. Start point S and target point T are chosen withing the file itself.
 
-Once the program has finished, the shortest path can be found appended at the end of the TestPolygons.txt file. If you run the python script on it, it is going to visualize the path:
+Once the program has finished, the shortest path can be found appended at the end of the **TestPolygons.txt** file. If you run the python script on it, it is going to visualize the path:
 
-![alt text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapPtah.PNG?raw=true)
+![text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapPtah.PNG?raw=true)
 
 
 # Bibliography
