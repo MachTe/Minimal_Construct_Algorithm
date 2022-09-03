@@ -1,5 +1,5 @@
 # Minimal Construct Algorithm
-This repository contains C++ implementation of the Minimal Construct Algorithm as proposed by Missura, Lee and Bennewitz[1]. The paper can be found under /src/source.pdf. In short, it is used to find the shortest path from point A to point B in a plane covered by polygons.
+This repository contains **C++** implementation of the Minimal Construct Algorithm as proposed by Missura, Lee and Bennewitz[1]. The paper can be found under /src/**source.pdf**. In short, it is used to find the shortest path from point A to point B in a plane covered by polygons.
 
 All that is needed is to include the MCA.h header file and correctly use the FindDirectionOfTravel function, which returns the shortest path as a vector of Points.
 
