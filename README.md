@@ -26,8 +26,15 @@ y1<br />
 
 Even if such a file is not used to load the polygons, the clockwise / counter-clockwise conditions still holds.
 
-When the python script /polygons/display_map.py is used, it draws the map, which looks like this:
+When the python script /polygons/display_map.py is used, it draws a visualization which looks like this:
 
 ![alt text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapEmpty.PNG?raw=true)
+
+# Compilation
+In order to execute testingMCA.cpp normaly, it has to be compiled and run from the same folder. Start point S and target point T are chosen withing the file itself.
+
+Once the program has finished, the shortest path can be found appended at the end of the TestPolygons.txt file. If you run the python script on it, it is going to visualize the path:
+
+![alt text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapPath.PNG?raw=true)
 # Bibliography
 [1] Missura, Marcell & Lee, Daniel & Bennewitz, Maren. (2018). Minimal Construct: Efficient Shortest Path Finding for Mobile Robots in Polygonal Maps. 7918-7923. 10.1109/IROS.2018.8594124. 
