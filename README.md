@@ -35,6 +35,8 @@ In order to execute testingMCA.cpp normaly, it has to be compiled and run from t
 
 Once the program has finished, the shortest path can be found appended at the end of the TestPolygons.txt file. If you run the python script on it, it is going to visualize the path:
 
-![alt text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapPath.PNG?raw=true)
+![alt text](https://github.com/MachTe/Minimal_Construct_Algorithm/blob/main/TestMapPtah.PNG?raw=true)
+
+
 # Bibliography
 [1] Missura, Marcell & Lee, Daniel & Bennewitz, Maren. (2018). Minimal Construct: Efficient Shortest Path Finding for Mobile Robots in Polygonal Maps. 7918-7923. 10.1109/IROS.2018.8594124. 
